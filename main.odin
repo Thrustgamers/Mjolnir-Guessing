@@ -27,11 +27,10 @@ main :: proc() {
 		switch true {
 		case attempts == maxAttempts:
 			fmt.println("You have ran out of attempts")
-			break
+			return
 		case guessedNumber == randomNumber:
 			fmt.println("Congrats you guessed the number in", attempts, "attempts")
-			attempts = maxAttempts
-			break
+			return
 		case guessedNumber > randomNumber:
 			fmt.println("You guessed too high")
 		case guessedNumber < randomNumber:
